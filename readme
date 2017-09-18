@@ -1,0 +1,92 @@
+1. start the server by running demoapplication.java from intellij or eclipse by clicking run
+or can build the project from mvn from command line
+2. the loading data will be completed from the loader class.
+
+
+3.query this for getting all the productList by sending the request body
+http://localhost:8080/rest/search/filter ---POST
+
+ex: http://localhost:8080/rest/search/filter
+Body:
+
+{
+   "name":["sonytv","lgtv","sofa"],
+   "brand":["sony","lg","sofa"],
+   "price":[10000,90000],
+   "condition":["used","new"],
+   "category":["television","furniture"]
+}
+
+
+[
+  {
+    "productName": "sonytv",
+    "id": 123,
+    "brand": "sony",
+    "price": 80000,
+    "condition": "new",
+    "category": "television"
+  },
+  {
+    "productName": "lgtv",
+    "id": 125,
+    "brand": "lg",
+    "price": 42000,
+    "condition": "new",
+    "category": "television"
+  },
+  {
+    "productName": "sonytv",
+    "id": 126,
+    "brand": "sony",
+    "price": 42000,
+    "condition": "used",
+    "category": "television"
+  },
+  {
+    "productName": "sofa",
+    "id": 129,
+    "brand": "sofa",
+    "price": 22000,
+    "condition": "used",
+    "category": "furniture"
+  },
+  {
+    "productName": "sofa",
+    "id": 130,
+    "brand": "sofa",
+    "price": 62000,
+    "condition": "new",
+    "category": "furniture"
+  }
+]
+
+
+4.query this for getting all the productList by productname
+http://localhost:8080/rest/search/name/{productName} --GET
+ex: http://localhost:8080/rest/search/name/sony
+
+[
+  {
+    "productName": "sonytv",
+    "id": 123,
+    "brand": "sony",
+    "price": 80000,
+    "condition": "new",
+    "category": "television"
+  },
+  {
+    "productName": "sonytv",
+    "id": 126,
+    "brand": "sony",
+    "price": 42000,
+    "condition": "used",
+    "category": "television"
+  }
+]
+
+
+
+
+
+
